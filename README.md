@@ -1,0 +1,1 @@
+# word-blitz-hack-browser-extension
