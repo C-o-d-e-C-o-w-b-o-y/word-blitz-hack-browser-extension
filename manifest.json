@@ -1,0 +1,26 @@
+{
+  "name": "Word Blitz Cheat Injector",
+  "description": "Word Blitz Hack made by Code Cowboy on YouTube",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.fbsbx.com/*", "https://*.fbsbx.com/*"],
+      "js": ["CodeCowboy.js"],
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["words.txt"],
+      "matches": ["https://*.fbsbx.com/*", "https://*.fbsbx.com/*"]
+    }
+  ],
+  "icons": { "16": "16x16.png", "48": "48x48.png", "128": "128x128.png" }
+}

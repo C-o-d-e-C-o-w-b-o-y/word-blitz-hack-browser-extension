@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <!-- This file is mostly garbage I quickly copied off of internet, don't look lol -->
+  <head>
+    <style>
+      body {
+        background-image: url('popup_background.jpg');
+        background-color: #110126;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 248px;
+        height: 281px;
+        padding-bottom: 500px;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      #container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 170px;
+      }
+
+      #startButton {
+        font-family: Tahoma, 'Courier new';
+        border: none;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: white;
+        color: black;
+        width: 150px;
+      }
+
+      #startButton:hover {
+        opacity: 0.8;
+        cursor: pointer;
+        color: white;
+        background-color: black;
+      }
+
+      #startButton:active {
+        color: #482abc;
+      }
+
+      .rainbowBtn {
+        --angle: 0deg;
+        border: 2px solid;
+        border-image: conic-gradient(
+            from var(--angle),
+            #22c9ff,
+            #4da9f9,
+            #9775f7,
+            #681f6f,
+            #d8206f,
+            #ef745c,
+            #fcba4a,
+            #22c9ff
+          )
+          1;
+
+        animation: 1s rotate linear infinite;
+      }
+
+      .rainbowBtn:hover {
+        animation: 1s rotate linear infinite;
+      }
+
+      .glow {
+        font-size: 80px;
+        color: #fff;
+        text-align: center;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
+            0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073,
+            0 0 70px #e60073;
+        }
+        to {
+          text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+            0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+            0 0 80px #ff4da6;
+        }
+      }
+
+      #cowboy-youtube-pair {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        animation: MoveUpDown 2s ease-in-out infinite;
+        margin-top: 20px;
+        margin-bottom: 5px;
+        cursor: pointer;
+      }
+
+      #cowboy-youtube-pair:hover {
+        opacity: 0.8;
+      }
+
+      @keyframes MoveUpDown {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      #subscribe-btn,
+      #code-cowboy-img {
+        height: 80px;
+        filter: drop-shadow(0px 2px 5px white);
+      }
+
+      .rainbow {
+        --angle: 0deg;
+        border: 4px solid;
+        border-image: conic-gradient(
+            from var(--angle),
+            #22c9ff,
+            #4da9f9,
+            #9775f7,
+            #681f6f,
+            #d8206f,
+            #ef745c,
+            #fcba4a,
+            #22c9ff
+          )
+          1;
+
+        animation: 4s rotate linear infinite;
+      }
+
+      @keyframes rotate {
+        to {
+          --angle: 360deg;
+        }
+      }
+
+      @property --angle {
+        syntax: '<angle>';
+        initial-value: 0deg;
+        inherits: false;
+      }
+
+      #start-help-button-pair {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #help-button {
+        border: none;
+        padding: 0;
+        margin: 0;
+        border-radius: 50%;
+        font-size: 18px;
+        width: 30px;
+        height: 30px;
+        font-weight: bold;
+        margin-left: 8px;
+        box-sizing: border-box;
+        border: 1px solid #9775f7;
+        color: black;
+        background-color: white;
+      }
+
+      #help-button:hover {
+        cursor: pointer;
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <script src="popup.js"></script>
+  <body>
+    <div class="rainbow">
+      <div id="container">
+        <div id="start-help-button-pair">
+          <div class="rainbowBtn">
+            <input
+              id="startButton"
+              type="button"
+              value="Inject Hack &#x1f608;"
+            />
+          </div>
+          <input id="help-button" type="button" value="?" />
+        </div>
+      </div>
+      <div id="cowboy-youtube-pair">
+        <img id="code-cowboy-img" src="code_cowboy.png" alt="Code Cowboy" />
+        <img
+          id="subscribe-btn"
+          src="subscribe.png"
+          alt="Subscribe to Code Cowboy on YouTube for more"
+        />
+      </div>
+    </div>
+  </body>
+</html>
